@@ -1,0 +1,33 @@
+1. 
+(A)
+ a.CREATE TABLE STUDENTS(Roll_no int,S_name VARCHAR(30),S_Address VARCHAR(30),constraint r primary key(Roll_no));
+ b.CREATE TABLE MARKSHEET(Rollno int,sub1 numeric(5),sub2 numeric(5),sub3 numeric(5),constraint foreign key(Rollno) references STUDENTS(Roll_no));
+
+(B)
+ a.INSERT INTO STUDENTS VALUES(1,'Rahul','Pattom');
+    INSERT INTO STUDENTS VALUES(2,'Sachin','Ambalamukku');
+    INSERT INTO STUDENTS VALUES(3,'Sourav','Nalanchira');
+
+ b.INSERT INTO MARKSHEET VALUES (1,78,30,45);
+    INSERT INTO MARKSHEET VALUES (2,45,65,50);
+    INSERT INTO MARKSHEET VALUES (3,60,87,33);
+
+(C)
+ a.ALTER TABLE MARKSHEET ADD Grade VARCHAR(5);
+
+ b.ALTER TABLE MARKSHEET DROP COLUMN sub2;
+
+ c.ALTER TABLE STUDENTS ADD phNo int;
+    ALTER TABLE STUDENTS ADD constraint c check(length(phNo)=10);
+    Update STUDENTS SET PhNo=5674321234 where Roll_no=1;
+    Update STUDENTS SET PhNo=9674321245 where Roll_no=2;
+    Update STUDENTS SET PhNo=95433214315 where Roll_no=3;
+
+(D) 
+ a.SELECT * FROM STUDENTS WHERE S_Address='Pattom';
+ 
+ b.SELECT sub1+sub3 as Total from MARKSHEET where Rollno=2;
+
+ c.SELECT S_name from STUDENTS where Roll_no=3;
+
+ d.SELECT phNo from STUDENTS where S_name='Sachin';
