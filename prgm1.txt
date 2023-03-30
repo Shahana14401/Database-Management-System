@@ -1,7 +1,7 @@
 1. 
 (A)
  a.CREATE TABLE STUDENTS(Roll_no int,S_name VARCHAR(30),S_Address VARCHAR(30),constraint r primary key(Roll_no));
- b.CREATE TABLE MARKSHEET(Rollno int,sub1 numeric(5),sub2 numeric(5),sub3 numeric(5),constraint foreign key(Rollno) references STUDENTS(Roll_no));
+ b.CREATE TABLE MARKSHEET(Rollno int,sub1 numeric(5),sub2 numeric(5),sub3 numeric(5),constraint f foreign key(Rollno) references STUDENTS(Roll_no));
 
 (B)
  a.INSERT INTO STUDENTS VALUES(1,'Rahul','Pattom');
