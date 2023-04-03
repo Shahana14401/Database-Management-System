@@ -1,0 +1,6 @@
+2.
+   a.CREATE TABLE Dept(deptid int,name varchar(30),constraint q primary key(deptid));
+   b.CREATE TABLE STUDENT(studid int,name varchar(30),class varchar(2),city varchar(15),total_marks int,percentage numeric(5),deptid int,constraint pkey primary key(studid),constraint det foreign key(deptid) references Dept(deptid));
+  c.CREATE TABLE STAFF(staffid int,name varchar(30),deptid int,designation varchar(15),salary numeric(7),city varchar(10),constraint stf primary key(staffid),constraint dept foreign key(deptid) references Dept(deptid));
+  d.CREATE TABLE COMPANY(compid int,name varchar(30),city varchar(15),no_of_employees numeric(5),constraint cmp primary key(compid)); 
+  e.CREATE TABLE EMPLOYEE(empid int,name varchar(30),compid int,designation varchar(15),salary numeric(7),city varchar(15),constraint emp primary key(empid),constraint comp foreign key(compid) references COMPANY(compid));
